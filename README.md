@@ -1,4 +1,5 @@
-TODO: Add more to the title of your project here
+Erik Klint
+Envrionmental impacts and psychology 
 
 # LearningR:
 
