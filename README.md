@@ -2,7 +2,7 @@ Erik Klint
 Envrionmental impacts and psychology 
 Test to create token
 
-# LearningR:
+# LearningR:use
 
 TODO: Give a brief description of what your project is about
 
