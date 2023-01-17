@@ -3,3 +3,36 @@ title: "Reproducible document"
 author: "Erik Klint"
 format: html
 ---
+
+```{r setup}
+#| include: false
+library(tidyverse)
+nhanes_small <- read_csv(here::here("data/nhanes_small.csv"))
+```
+
+
+## Table of results 
+
+
+```{r mean-age-bmi-table}
+#| echo: false
+#| warning: false
+#| message: false 
+
+# exclude and have many summaries
+nhanes_small %>%
+  filter(
+    !is.na(diabetes),
+    !is.na(education)
+  ) %>%
+  group_by(
+    diabetes,
+    education
+  ) %>%
+  summarise(
+    max_bmi = max(bmi, na.rm = TRUE),
+    min_bmi = min(bmi, na.rm = TRUE)
+  ) %>%
+ungroup() %>% 
+    knitr::kable(caption = "Mean values of Age and education for each diabetes and physical activity status")
+```
