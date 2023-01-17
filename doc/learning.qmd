@@ -1,7 +1,9 @@
 ---
 title: "Reproducible document"
 author: "Erik Klint"
-format: html
+format:
+  html:
+    theme: yeti
 ---
 
 ```{r setup}
@@ -81,6 +83,12 @@ testing testing testing:
 ```{r}
 2+2
 ```
+
+
+
+## Inserting images 
+
+![Image by a cute cat.](images/catpicture.jpg){#fig-cat}
 
 
 
