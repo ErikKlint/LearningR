@@ -2,8 +2,9 @@ Erik Klint
 Envrionmental impacts and psychology 
 Test to create token
 
-blahblah to blahblah blahblah
-test tu blahblah changes
+Test to push meging conflicts
+test tu pull blahblah
+
 
 # LearningR:use
 
