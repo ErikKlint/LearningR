@@ -1,3 +1,5 @@
+# This is the merge conflict from GitHUB
+
 # R basics ----------------------------------------------------------------
 
 weight_kilos <- 100
