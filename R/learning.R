@@ -210,7 +210,9 @@ nhanes_small %>%
   summarise(
     max_bmi = max(bmi, na.rm = TRUE),
     min_bmi = min(bmi, na.rm = TRUE)
-  )
+  ) %>%
+ungroup()
+
 
 
 # 7.15  Exercise: Calculate some basic statistics -------------------------
@@ -230,3 +232,17 @@ nhanes_small %>%
     max_bp_dia = max(bp_dia_ave, na.rm = TRUE),
     min_bp_dia = min(bp_dia_ave, na.rm = TRUE)
   )
+
+
+# save dataset ------------------------------------------------------------
+
+write_csv(
+  nhanes_small,
+  here::here("data/nhanes_small.csv")
+)
+
+
+
+
+
+
