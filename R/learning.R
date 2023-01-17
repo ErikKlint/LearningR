@@ -107,3 +107,29 @@ nhanes_small %>%
 nhanes_small %>%
   select(starts_with("bp_")) %>%
   rename(bp_systolic = bp_sys_ave)
+
+
+nhanes_small %>%
+  select(education) %>%
+  levels()
+
+
+
+# filtering rows ----------------------------------------------------------
+
+nhanes_small %>%
+  filter(phys_active != "No")
+
+nhanes_small %>%
+  filter(bmi == 25,
+    phys_active != "No")
+
+#is the same as:
+
+nhanes_small %>%
+    filter(bmi == 25 &
+           phys_active != "No")
+
+nhanes_small %>%
+    filter(bmi == 25 |
+               phys_active == "No")
