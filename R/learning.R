@@ -35,18 +35,17 @@ select(NHANES, contains("Age"))
 # Recall the style guide for naming objects
 
 nhanes_small <- select(
-    NHANES,
-    Age,
-    Gender,
-    BMI,
-    Diabetes,
-    PhysActive,
-    BPSysAve,
-    BPDiaAve,
-    Education)
+  NHANES,
+  Age,
+  Gender,
+  BMI,
+  Diabetes,
+  PhysActive,
+  BPSysAve,
+  BPDiaAve,
+  Education
+)
 
 
 # View the new data frame
 nhanes_small
-
-
