@@ -121,15 +121,45 @@ nhanes_small %>%
   filter(phys_active != "No")
 
 nhanes_small %>%
-  filter(bmi == 25,
+  filter(
+    bmi == 25,
+    phys_active != "No"
+  )
+
+# is the same as:
+
+nhanes_small %>%
+  filter(bmi == 25 &
     phys_active != "No")
 
-#is the same as:
+nhanes_small %>%
+  filter(bmi == 25 |
+    phys_active == "No")
+
+
+
+# Arranging rows ----------------------------------------------------------
+
 
 nhanes_small %>%
-    filter(bmi == 25 &
-           phys_active != "No")
+  arrange(desc(age))
+
 
 nhanes_small %>%
-    filter(bmi == 25 |
-               phys_active == "No")
+  arrange(desc(age), bmi, education)
+
+
+# Mutating columns --------------------------------------------------------
+
+
+nhanes_update <- nhanes_small %>%
+  mutate(
+    age_month = age * 12,
+    logged_bmi = log(bmi),
+    age_weeks = age_month * 4,
+    old = if_else(
+      age >= 30,
+      "old",
+      "young"
+    )
+  )
