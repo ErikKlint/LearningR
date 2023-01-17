@@ -1,3 +1,5 @@
+# Here is an example of an conflict
+
 # R basics ----------------------------------------------------------------
 
 weight_kilos <- 100
