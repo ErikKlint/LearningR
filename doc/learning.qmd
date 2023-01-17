@@ -38,9 +38,6 @@ nhanes_small %>%
 ```
 
 
-
-
-
 ```{r prettier-table}
 #| echo: false
 
@@ -68,3 +65,32 @@ nhanes_small %>%
   ) %>%
   knitr::kable(caption = "Mean values of Age and BMI for each education and diabetes status.")
 ```
+
+# Intro 
+
+This is an (*introduction*) (**paragraph**)
+
+# Methods and Results 
+
+I have (*(**no**)*) method
+
+## Analysis 
+
+testing testing testing: 
+
+```{r}
+2+2
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
