@@ -178,7 +178,7 @@ nhanes_small %>%
 nhanes_modified <- nhanes_small %>% # Specifying dataset
   mutate(
     # 2. Calculate mean arterial pressure
-    mean_arterial_pressure = ((2*bp_dia_ave)+bp_sys_ave)/3,
+    mean_arterial_pressure = ((2 * bp_dia_ave) + bp_sys_ave) / 3,
     # 3. Create young_child variable using a condition
     young_child = if_else(age < 6, "Yes", "No")
   )
@@ -186,11 +186,47 @@ nhanes_modified <- nhanes_small %>% # Specifying dataset
 nhanes_modified
 
 
+# 7.14 Calculating summary statistics -------------------------------------
+
+nhanes_small %>%
+  summarise(max_bmi = max(bmi))
+
+# you get NA, since contain NA values!
+
+# exclude NA-values
+nhanes_small %>%
+  summarise(max_bmi = max(bmi, na.rm = TRUE))
+
+# exclude and have many summaries
+nhanes_small %>%
+  filter(
+    !is.na(diabetes),
+    !is.na(phys_active)
+  ) %>%
+  group_by(
+    diabetes,
+    phys_active
+  ) %>%
+  summarise(
+    max_bmi = max(bmi, na.rm = TRUE),
+    min_bmi = min(bmi, na.rm = TRUE)
+  )
 
 
+# 7.15  Exercise: Calculate some basic statistics -------------------------
 
+# 1.
+nhanes_small %>%
+  summarise(
+    mean_bp_sys = mean(bp_sys_ave, na.rm = TRUE),
+    mean_age = mean(age, na.rm = TRUE)
+  )
 
+str(nhanes_small)
 
-
-
-
+# 2.
+nhanes_small %>%
+  summarise(
+    max_bp_dia = max(bp_dia_ave, na.rm = TRUE),
+    min_bp_dia = min(bp_dia_ave, na.rm = TRUE)
+  )
