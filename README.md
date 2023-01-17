@@ -2,7 +2,7 @@ Erik Klint
 Envrionmental impacts and psychology 
 Test to create token
 
-Test to see pull changes
+Test to push changes
 
 # LearningR:use
 
