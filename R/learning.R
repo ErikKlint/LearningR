@@ -1,4 +1,5 @@
 # This is the merge conflict from GitHUB
+# This is the merge conflict from GitHUB
 
 # R basics ----------------------------------------------------------------
 
