@@ -31,4 +31,22 @@ select(NHANES, ends_with("Day"))
 select(NHANES, contains("Age"))
 
 
+# Save the selected columns as a new data frame
+# Recall the style guide for naming objects
+
+nhanes_small <- select(
+    NHANES,
+    Age,
+    Gender,
+    BMI,
+    Diabetes,
+    PhysActive,
+    BPSysAve,
+    BPDiaAve,
+    Education)
+
+
+# View the new data frame
+nhanes_small
+
 
