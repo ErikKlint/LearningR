@@ -49,3 +49,41 @@ nhanes_small <- select(
 
 # View the new data frame
 nhanes_small
+
+
+
+# Fixing variable names ---------------------------------------------------
+
+nhanes_small <- rename_with(
+    nhanes_small,
+    snakecase::to_snake_case
+)
+
+
+#Renaming gender to sex for a correct term
+nhanes_small <-  rename(nhanes_small, sex = gender)
+nhanes_small
+
+
+# 7.7 Starting piping exercises  ------------------------------------------
+
+
+#this
+colnames(nhanes_small)
+
+
+#is the same as this
+nhanes_small %>% colnames()
+
+#renaming a specific column using piping
+nhanes_small %>%
+    select(phys_active) %>%
+    rename(physically_active  = phys_active)
+
+nhanes_small
+
+
+
+
+
+
